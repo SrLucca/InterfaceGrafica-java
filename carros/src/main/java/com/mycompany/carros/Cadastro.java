@@ -22,6 +22,7 @@ public class Cadastro {
     public static int codigoStatic = 1;
     
     public Cadastro(String tipo, String modelo, boolean consignado){
+        
     
         this.codigo = codigoStatic++;
         this.tipo = tipo;
