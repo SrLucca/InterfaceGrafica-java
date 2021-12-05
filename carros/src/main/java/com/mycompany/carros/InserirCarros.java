@@ -11,6 +11,7 @@ package com.mycompany.carros;
 public class InserirCarros {
     
     public static void main(String[] args){
+        
     
         Cadastro c1 = new Cadastro("Carro","Honda",false);
         Cadastro c2 = new Cadastro("moto","hornet",true);
