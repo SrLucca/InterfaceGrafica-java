@@ -14,6 +14,7 @@ public class Interface extends JFrame{
     
     //construtor
     Interface(){
+        
     
             this.setTitle("Registro e Venda de carros");
             this.setSize(400,200);
