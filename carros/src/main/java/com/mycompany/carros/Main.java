@@ -8,16 +8,11 @@ package com.mycompany.carros;
  *
  * @author lukss
  */
-public class InserirCarros {
+public class Main {
     
     public static void main(String[] args){
+
         
-    
-        Cadastro c1 = new Cadastro("Carro","Honda",false);
-        Cadastro c2 = new Cadastro("moto","hornet",true);
-        
-        System.out.println("AQUI "+c1.toString());
-        System.out.println("AQUI "+c2.toString());
         
         new Interface();
     }

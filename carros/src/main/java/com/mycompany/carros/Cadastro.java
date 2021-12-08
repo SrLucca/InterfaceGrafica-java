@@ -13,20 +13,26 @@ public class Cadastro {
     //atributos
     private int codigo;
     private String modelo;
+    private int ano;
+    private String marca;
+    private String placa;
+    private int kilometragem;
     private String tipo;
-    private boolean consignado;
-    private String var;
+    private String consignado;
     
     
 
     public static int codigoStatic = 1;
     
-    public Cadastro(String tipo, String modelo, boolean consignado){
+    public Cadastro(String modelo, String tipo, int ano, String marca, String placa, int kilometragem, String consignado){
         
     
         this.codigo = codigoStatic++;
-        this.tipo = tipo;
         this.modelo = modelo;
+        this.tipo = tipo;
+        this.marca = marca;
+        this.placa = placa;
+        this.kilometragem = kilometragem;
         this.consignado = consignado;
     }
 
@@ -34,36 +40,68 @@ public class Cadastro {
         this.modelo = modelo;
     }
 
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
-    public void setConsignado(boolean consignado) {
+    public void setConsignado(String consignado) {
         this.consignado = consignado;
     }
 
-    public boolean isConsignado() {
-        return consignado;
+    public static void setCodigoStatic(int codigoStatic) {
+        Cadastro.codigoStatic = codigoStatic;
     }
-    
+
     public String getModelo() {
         return modelo;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public int getKilometragem() {
+        return kilometragem;
     }
 
     public String getTipo() {
         return tipo;
     }
 
+    public String getConsignado() {
+        return consignado;
+    }
+
+    public static int getCodigoStatic() {
+        return codigoStatic;
+    }
+
     @Override
     public String toString() {
-        
-        if(consignado == true){
-            var = "consignado";
-        }else{
-            var = "nao e consignado";
-        }
-        return "Cadastro{" + "codigo=" + codigo + ", modelo=" + modelo + ", tipo=" + tipo + ", consignado= " + var + '}';
+        return "Cadastro{" + "codigo=" + codigo + ", modelo=" + modelo + ", ano=" + ano + ", marca=" + marca + ", placa=" + placa + ", kilometragem=" + kilometragem + ", tipo=" + tipo + ", consignado=" + consignado + '}';
     }
+    
+    
 
     
     
