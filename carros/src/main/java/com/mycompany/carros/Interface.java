@@ -16,6 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import com.mycompany.carros.telaCadastro;
+import com.mycompany.carros.telaVender;
 
 /**
  *
@@ -94,7 +95,7 @@ public class Interface extends JFrame implements ActionListener{
         }
         
         if(e.getSource() == btVender){
-            
+            new telaVender();
         }
         
     }
