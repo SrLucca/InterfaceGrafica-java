@@ -9,6 +9,7 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import javafx.scene.control.ComboBox;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -30,12 +31,19 @@ public class telaVender extends JFrame implements ActionListener{
     private JTextField tfnomeComprador, tfCPF, tfTel, tfDocumento, tfnomeVendedor, tfValor;
     private JButton btSair, btFinalizarVenda;
     private Venda automovel;
+    File diretorio = new File("C:\\Users\\lukss\\Documents\\NetBeansProjects\\interface-grafica-java\\carros\\Garagem");
 
     
     JComboBox<String> combo = new JComboBox <String>();
     JComboBox<String> combo2 = new JComboBox <String>();
     
     telaVender(){
+    
+    for(File file:diretorio.listFiles()){
+    
+        combo2.addItem(file.getName());
+    }
+        
     tela = this.getContentPane();
     tela.setLayout(new BorderLayout());
     
@@ -45,9 +53,9 @@ public class telaVender extends JFrame implements ActionListener{
     combo.addItem("Consórcio");
     
     //combo box TIPO DE AUTOMOVEL
-    combo2.addItem("Carro");
-    combo2.addItem("Moto");
-    combo2.addItem("Caminhão");
+    //combo2.addItem("Carro");
+    //combo2.addItem("Moto");
+    //combo2.addItem("Caminhão");
     
     
     //configurar paineis
@@ -129,9 +137,12 @@ public class telaVender extends JFrame implements ActionListener{
                    tfTel.getText(),tfDocumento.getText(),tfnomeVendedor.getText(),
                    combo.getSelectedItem().toString(), tfValor.getText());
            
+           diretorio = new File("C:\\Users\\lukss\\Documents\\NetBeansProjects\\interface-grafica-java\\carros\\Garagem"+"\\"+combo2.getSelectedItem().toString());
+           diretorio.delete();
+           setVisible(false);
            JOptionPane.showMessageDialog(null, "Automovel Vendido!");
            
-           System.out.println(automovel.toString());
+           
         }
     }
 }

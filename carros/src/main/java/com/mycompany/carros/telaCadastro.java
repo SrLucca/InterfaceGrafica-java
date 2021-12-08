@@ -17,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import java.io.FileWriter;
 
 
 /**
@@ -128,7 +129,28 @@ class telaCadastro extends JFrame implements ActionListener{
                    tfPlaca.getText(),tfKilometragem.getText(),combo2.getSelectedItem().toString(),
                    combo.getSelectedItem().toString(), tfValor.getText());
            
-           
+            String modelo = tfModelo.getText();
+            String ano = tfAno.getText();
+            String marca = tfMarca.getText();
+            String placa = tfPlaca.getText();
+            String kilometragem = tfKilometragem.getText();
+            String tipo = combo2.getSelectedItem().toString();
+            String consignado = combo.getSelectedItem().toString();
+            String valor = tfValor.getText();
+            
+            String nome_arquivo = "C:\\Users\\lukss\\Documents\\NetBeansProjects\\interface-grafica-java\\carros\\Garagem\\"+modelo+".txt";
+            try {
+                FileWriter gravarArquivo = new FileWriter(nome_arquivo, true);
+                gravarArquivo.write("\nModelo:"+modelo+"\nAno:"+ano+"\nMarca:"+marca+"\nPlaca:"+placa+"\nKilometragem:"+kilometragem+
+                        "\nTipo:"+tipo+"\nConsignado:"+consignado+"\nValor:"+valor);
+                
+                gravarArquivo.write(System.getProperty("line.separator"));
+                gravarArquivo.close();
+                setVisible(false);
+            }catch(Exception erro){
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro no cadastro!");
+            }
+            
            JOptionPane.showMessageDialog(null, "Automovel Cadastrado!");
            
            
